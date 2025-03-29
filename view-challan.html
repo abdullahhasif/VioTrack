@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>View Challans</title>
+  <link rel="stylesheet" type="text/css" href="assets/css/scrollbar.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/all.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+  <div id="loader-wrapper">
+    <div class="loader"></div>
+  </div>
+
+  <div class='dashboard'>
+    <div class="dashboard-nav">
+      <header>
+        <a href="#!" class="menu-toggle"><i class="fas fa-bars"></i></a><a href="#" class="brand-logo">
+          <span>LOGO</span></a>
+      </header>
+      <nav class="dashboard-nav-list">
+        <a href="home.html" class="dashboard-nav-item"><i class="fas fa-home"></i> Home </a>
+        <a href="index.html" class="dashboard-nav-item"><i class="fas fa-tachometer-alt"></i> Dashboard </a>
+        <a href="create-challan.html" class="dashboard-nav-item"><i class="fas fa-file-upload"></i> Create Challan </a>
+        <a href="view-challans.html" class="dashboard-nav-item active"><i class="fas fa-photo-video"></i> View Challans
+        </a>
+        <div class='dashboard-nav-dropdown'>
+          <a href="#!" class="dashboard-nav-item dashboard-nav-dropdown-toggle"><i class="fas fa-users"></i> Report </a>
+          <div class='dashboard-nav-dropdown-menu'>
+            <a href="#" class="dashboard-nav-dropdown-item">All</a>
+            <a href="#" class="dashboard-nav-dropdown-item">Subscribed</a>
+            <a href="#" class="dashboard-nav-dropdown-item">Non-subscribed</a>
+            <a href="#" class="dashboard-nav-dropdown-item">Banned</a>
+            <a href="#" class="dashboard-nav-dropdown-item">New</a>
+          </div>
+        </div>
+        <div class='dashboard-nav-dropdown'>
+          <a href="#!" class="dashboard-nav-item dashboard-nav-dropdown-toggle"><i class="fas fa-money-check-alt"></i>
+            Payments </a>
+          <div class='dashboard-nav-dropdown-menu'>
+            <a href="#" class="dashboard-nav-dropdown-item">All</a>
+            <a href="#" class="dashboard-nav-dropdown-item">Recent</a>
+            <a href="#" class="dashboard-nav-dropdown-item"> Projections</a>
+          </div>
+        </div>
+        <a href="setting.html" class="dashboard-nav-item"><i class="fas fa-cogs"></i> Settings </a>
+        <a href="#" class="dashboard-nav-item"><i class="fas fa-user"></i> Profile </a>
+        <div class="nav-item-divider"></div>
+        <a href="login.html" class="dashboard-nav-item"><i class="fas fa-sign-out-alt"></i> Logout </a>
+      </nav>
+    </div>
+    <div class='dashboard-app'>
+      <header class='dashboard-toolbar'><a href="#!" class="menu-toggle"><i class="fas fa-bars"></i></a></header>
+      <div class='dashboard-content'>
+        <div class='container mt-5'>
+          <div class='card'>
+            <div class='card-header'>
+              <h3>View Challans</h3>
+            </div>
+            <div class='card-body'>
+              <input type="text" id="searchBar" class="form-control mb-4" placeholder="Search Challans...">
+
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th>Challan ID</th>
+                    <th>Customer Name</th>
+                    <th>Date</th>
+                    <th>Total Amount</th>
+                    <th>Payment Status</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="challanTable">
+                  <tr>
+                    <td>101</td>
+                    <td>Abdullah Asif</td>
+                    <td>2024-09-01</td>
+                    <td>2400</td>
+                    <td><span class="badge bg-success">Paid</span></td>
+                    <td>
+                      <button class="btn btn-primary btn-sm edit-btn">Edit</button>
+                      <button class="btn btn-info btn-sm view-btn">View</button>
+                      <button class="btn btn-danger btn-sm delete-btn">Delete</button>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>102</td>
+                    <td>Adeel Ahmed</td>
+                    <td>2024-09-01</td>
+                    <td>2400</td>
+                    <td><span class="badge bg-success">Paid</span></td>
+                    <td>
+                      <button class="btn btn-primary btn-sm edit-btn">Edit</button>
+                      <button class="btn btn-info btn-sm view-btn">View</button>
+                      <button class="btn btn-danger btn-sm delete-btn">Delete</button>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>103</td>
+                    <td>Uzair Chohan</td>
+                    <td>2024-09-01</td>
+                    <td>2400</td>
+                    <td><span class="badge bg-success">Paid</span></td>
+                    <td>
+                      <button class="btn btn-primary btn-sm edit-btn">Edit</button>
+                      <button class="btn btn-info btn-sm view-btn">View</button>
+                      <button class="btn btn-danger btn-sm delete-btn">Delete</button>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>104</td>
+                    <td>Balach Khan</td>
+                    <td>2024-09-01</td>
+                    <td>2400</td>
+                    <td><span class="badge bg-success">Paid</span></td>
+                    <td>
+                      <button class="btn btn-primary btn-sm edit-btn">Edit</button>
+                      <button class="btn btn-info btn-sm view-btn">View</button>
+                      <button class="btn btn-danger btn-sm delete-btn">Delete</button>
+                    </td>
+                  </tr>
+
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Edit Modal -->
+  <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="editModalLabel">Edit Challan Details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="editChallanForm">
+            <input type="hidden" id="editChallanId">
+            <div class="mb-3">
+              <label for="editCustomerName" class="form-label">Customer Name</label>
+              <input type="text" class="form-control" id="editCustomerName" required>
+            </div>
+            <div class="mb-3">
+              <label for="editDate" class="form-label">Date</label>
+              <input type="date" class="form-control" id="editDate" required>
+            </div>
+            <div class="mb-3">
+              <label for="editAmount" class="form-label">Total Amount</label>
+              <input type="number" class="form-control" id="editAmount" required>
+            </div>
+            <div class="mb-3">
+              <label for="editPaymentStatus" class="form-label">Payment Status</label>
+              <select class="form-control" id="editPaymentStatus" required>
+                <option value="Paid">Paid</option>
+                <option value="Unpaid">Unpaid</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Save Changes</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- View Modal -->
+  <div class="modal fade" id="viewModal" tabindex="-1" aria-labelledby="viewModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="viewModalLabel">Challan Details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="mb-3">
+            <label for="viewChallanId" class="form-label">Challan ID</label>
+            <input type="text" class="form-control" id="viewChallanId" readonly>
+          </div>
+          <div class="mb-3">
+            <label for="viewCustomerName" class="form-label">Customer Name</label>
+            <input type="text" class="form-control" id="viewCustomerName" readonly>
+          </div>
+          <div class="mb-3">
+            <label for="viewDate" class="form-label">Date</label>
+            <input type="text" class="form-control" id="viewDate" readonly>
+          </div>
+          <div class="mb-3">
+            <label for="viewAmount" class="form-label">Total Amount</label>
+            <input type="text" class="form-control" id="viewAmount" readonly>
+          </div>
+          <div class="mb-3">
+            <label for="viewPaymentStatus" class="form-label">Payment Status</label>
+            <input type="text" class="form-control" id="viewPaymentStatus" readonly>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Delete Confirmation Modal -->
+  <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="deleteModalLabel">Confirm Delete</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Are you sure you want to delete this challan?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-danger" id="confirmDeleteBtn">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS (with Popper.js for modals) -->
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
+  <script language="javascript" type="text/javascript" src="assets/js/view-challan.js"></script>
+  <script language="javascript" type="text/javascript" src="assets/js/script.js"></script>
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+
+
+</body>
+
+</html>

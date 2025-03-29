@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <title>Challan Dashboard</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/scrollbar.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <div id="loader-wrapper">
+        <div class="loader"></div>
+    </div>
+
+    <div class='dashboard'>
+        <div class="dashboard-nav">
+            <header>
+                <a href="#!" class="menu-toggle"><i class="fas fa-bars"></i></a>
+                <a href="#" class="brand-logo"><span>LOGO</span></a>
+            </header>
+            <nav class="dashboard-nav-list">
+                <a href="home.html" class="dashboard-nav-item"><i class="fas fa-home"></i> Home</a>
+                <a href="index.html" class="dashboard-nav-item active"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                <a href="create-challan.html" class="dashboard-nav-item"><i class="fas fa-file-upload"></i> Create Challan</a>
+                <a href="view-challan.html" class="dashboard-nav-item"><i class="fas fa-photo-video"></i> View Challans</a>
+                <div class='dashboard-nav-dropdown'>
+                    <a href="#!" class="dashboard-nav-item dashboard-nav-dropdown-toggle"><i class="fas fa-users"></i> Report </a>
+                    <div class='dashboard-nav-dropdown-menu'>
+                        <a href="#" class="dashboard-nav-dropdown-item">All</a>
+                        <a href="#" class="dashboard-nav-dropdown-item">Subscribed</a>
+                        <a href="#" class="dashboard-nav-dropdown-item">Non-subscribed</a>
+                        <a href="#" class="dashboard-nav-dropdown-item">Banned</a>
+                        <a href="#" class="dashboard-nav-dropdown-item">New</a>
+                    </div>
+                </div>
+                <div class='dashboard-nav-dropdown'>
+                    <a href="#!" class="dashboard-nav-item dashboard-nav-dropdown-toggle"><i class="fas fa-money-check-alt"></i> Payments</a>
+                    <div class='dashboard-nav-dropdown-menu'>
+                        <a href="#" class="dashboard-nav-dropdown-item">All</a>
+                        <a href="#" class="dashboard-nav-dropdown-item">Recent</a>
+                        <a href="#" class="dashboard-nav-dropdown-item">Projections</a>
+                    </div>
+                </div>
+                <a href="setting.html" class="dashboard-nav-item"><i class="fas fa-cogs"></i> Settings</a>
+                <a href="#" class="dashboard-nav-item"><i class="fas fa-user"></i> Profile</a>
+                <div class="nav-item-divider"></div>
+                <a href="login.html" class="dashboard-nav-item"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </nav>
+        </div>
+        <div class='dashboard-app'>
+            <header class='dashboard-toolbar'>
+                <a href="#!" class="menu-toggle"><i class="fas fa-bars"></i></a>
+            </header>
+            <div class='dashboard-content'>
+                <div class='container'>
+                    <!-- Dashboard Overview Cards -->
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6">
+                            <div class="card text-white bg-success mb-4">
+                                <div class="card-body">
+                                    <h5>Total Challans</h5>
+                                    <h2>1240</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="card text-white bg-info mb-4">
+                                <div class="card-body">
+                                    <h5>Paid Challans</h5>
+                                    <h2>980</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="card text-white bg-warning mb-4">
+                                <div class="card-body">
+                                    <h5>Pending Challans</h5>
+                                    <h2>260</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="card text-white bg-danger mb-4">
+                                <div class="card-body">
+                                    <h5>Overdue Challans</h5>
+                                    <h2>120</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Charts Section -->
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="card mb-4">
+                                <div class="card-header">
+                                    <h3>Monthly Challans</h3>
+                                </div>
+                                <div class="card-body">
+                                    <canvas id="monthlyChallanChart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6">
+                            <div class="card mb-4">
+                                <div class="card-header">
+                                    <h3>Challan Status Distribution</h3>
+                                </div>
+                                <div class="card-body">
+                                    <canvas id="challanStatusChart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+   
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script language="javascript" type="text/javascript" src="assets/js/script.js"></script>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+</body>
+
+</html>

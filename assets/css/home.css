@@ -1,0 +1,51 @@
+
+.dashboard-app {
+    flex-grow: 1;
+    margin-left: 250px;
+    padding: 30px;
+}
+
+
+.dashboard-content {
+    margin-top: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.card {
+    background-color: #fff;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+}
+
+.card-header {
+    text-align: center;
+}
+
+.title {
+    font-size: 36px;
+    font-weight: 600;
+}
+
+.subtitle {
+    font-size: 20px;
+    color: #7f8c8d;
+    text-align: center;
+    margin-top: 15px;
+}
+
+@media (max-width: 768px) {
+
+    .dashboard-app {
+        margin-left: 0;
+    }
+
+    .dashboard-toolbar {
+        text-align: center;
+    }
+}
